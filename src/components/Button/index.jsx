@@ -1,3 +1,5 @@
+import './styles.css'
+
 const Button = (props) => {
 
     const name = "CoderHouse"

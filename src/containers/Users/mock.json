@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "Lucía",
+    "apellido": "González",
+    "direccion": "Av. Corrientes 1234, CABA",
+    "telefono": "+54 9 11 3456-7890",
+    "dni": "30123456",
+    "imagen": "https://randomuser.me/api/portraits/women/65.jpg"
+  },
+  {
+    "nombre": "Martín",
+    "apellido": "Pérez",
+    "direccion": "Calle San Martín 567, Mar del Plata, Buenos Aires",
+    "telefono": "+54 9 223 456-7890",
+    "dni": "27111222",
+    "imagen": "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    "nombre": "Camila",
+    "apellido": "Rojas",
+    "direccion": "Pasaje Las Rosas 888, Córdoba Capital",
+    "telefono": "+54 9 351 678-9012",
+    "dni": "34222333",
+    "imagen": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "nombre": "Joaquín",
+    "apellido": "Ramírez",
+    "direccion": "Bv. Oroño 456, Rosario, Santa Fe",
+    "telefono": "+54 9 341 789-1234",
+    "dni": "29876543",
+    "imagen": "https://randomuser.me/api/portraits/men/45.jpg"
+  },
+  {
+    "nombre": "Valentina",
+    "apellido": "Fernández",
+    "direccion": "Ruta 3 Km 45, San Justo, Buenos Aires",
+    "telefono": "+54 9 11 2345-6789",
+    "dni": "31888888",
+    "imagen": "https://randomuser.me/api/portraits/women/22.jpg"
+  }
+]
