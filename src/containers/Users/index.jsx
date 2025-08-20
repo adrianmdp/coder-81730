@@ -4,8 +4,6 @@ const Users = () => {
 
     return (
 
-       
-
         <table border={1}>
             <tbody>
                 {users.map(user => {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Users = () => {
 
@@ -6,7 +7,7 @@ const Users = () => {
     // y otro que lo usamos para mostrar en pantalla con o sin filtro (usersToSHow)
     const [users, setUsers] = useState([])
     const [usersToShow, setUsersToShow] = useState()
-    const [albums, setAlbums] = useState([])
+
 
     const getUsers = async () => {
         const resp = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -14,17 +15,6 @@ const Users = () => {
         if (resp.ok) {
             const data = await resp.json()
             setUsers(data)
-        } else {
-            // Acá tenemos oportunidad de hacer algo en el caso de que el ok venga en false
-        }
-    }
-
-    const getAlbums = async (userId) => {
-        const resp = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/albums`)
-
-        if (resp.ok) {
-            const data = await resp.json()
-            setAlbums(data)
         } else {
             // Acá tenemos oportunidad de hacer algo en el caso de que el ok venga en false
         }
@@ -59,8 +49,12 @@ const Users = () => {
 
     }
 
+    if (!usersToShow) return "Cargando..."
+
     return (
         <div>
+            <h1>Users</h1>
+            <br />
             <label htmlFor="search">Buscar</label>
             <input type="text" name="search" id="search" onChange={search} />
             <table border={1}>
@@ -83,17 +77,10 @@ const Users = () => {
                                     <td>{user.phone}</td>
                                     <td>{user.website}</td>
                                     <td>
-                                        <button onClick={() => getAlbums(user.id)}>Ver albums</button>
+                                        <Link to={`/users/${user.id}/albums`}>Ver albums</Link>
                                     </td>
                                 </tr>
-                                {albums.length > 0 && user.id === albums[0].userId && albums.map(album => {
-                                    return (
-                                        <tr>
-                                            <td>{album.id}</td>
-                                            <td colSpan={5}>{album.title}</td>
-                                        </tr>
-                                    )
-                                })}
+
                             </>
                         )
                     })}

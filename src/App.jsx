@@ -5,6 +5,11 @@ import Counter from './components/counter';
 import ComponenteWithChildren from './components/ComponenteWithChilden';
 import ComponenteUseEffect from './components/ComponenteUseEffect';
 import Users from './pages/Users';
+import Home from './pages/Home';
+import Login from './pages/Login';
+
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Albums from './pages/Albums';
 // import Users from './containers/Users';
 
 function App() {
@@ -48,7 +53,22 @@ function App() {
       <br/>
       <Users /> */}
 
-      <Users />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/users' element={<Users />} />
+          <Route path='/users/:userId/albums' element={<Albums />} />
+          <Route path='/' element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+
+        <Link to="/users">Ir a Users</Link>
+        <br />
+        <Link to="/">Ir a Home</Link>
+        <br />
+        <Link to="/login">Ir a Login</Link>
+      </BrowserRouter>
+
+
     </div>
   );
 }
