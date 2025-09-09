@@ -10,6 +10,14 @@ const Login = () => {
             <h1>Login</h1>
 
             { `${authContext.user.email} ${authContext.prueba}` } 
+
+            <form action="">
+                <label htmlFor="">User</label>
+                <input type="email" />
+
+                <label htmlFor="">Password</label>
+                <input type="password" />
+            </form>
         </>
     )
 
