@@ -8,7 +8,7 @@ const Signup = () => {
 
     return (
         <div>
-            <h2>Registro</h2>
+            <h1>Registro</h1>
 
             <form onSubmit={handleSignup}>
                 <label htmlFor=""></label>
