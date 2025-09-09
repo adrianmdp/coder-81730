@@ -10,6 +10,8 @@ import Login from './pages/Login';
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Albums from './pages/Albums';
+import { AuthProvider } from './contexts/auth';
+import AddUsers from './pages/AddUser';
 // import Users from './containers/Users';
 
 function App() {
@@ -18,6 +20,11 @@ function App() {
     const a = fetch('http://miapi.com/usuarios')
 
     console.log(a)
+  }
+
+  const user = {
+    name: "Adrian",
+    email: "asd@asd.com"
   }
 
 
@@ -53,24 +60,29 @@ function App() {
       <br/>
       <Users /> */}
 
-      <BrowserRouter>
-        <Routes>
-          <Route path='/users' element={<Users />} />
-          <Route path='/users/:userId/albums' element={<Albums />} />
-          <Route path='/' element={<Home />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/users' element={<Users />} />
+            <Route path='/users/add' element={<AddUsers />} />
+            <Route path='/users/:userId/albums' element={<Albums />} />
+            <Route path='/' element={<Home />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
 
-        <Link to="/users">Ir a Users</Link>
-        <br />
-        <Link to="/">Ir a Home</Link>
-        <br />
-        <Link to="/login">Ir a Login</Link>
-      </BrowserRouter>
+          {/* <Link to="/users">Ir a Users</Link>
+          <br />
+          <Link to="/">Ir a Home</Link>
+          <br />
+          <Link to="/login">Ir a Login</Link> */}
+        </BrowserRouter>
+      </AuthProvider>
 
 
     </div>
   );
 }
+
+
 
 export default App;
