@@ -7,9 +7,17 @@ const Login = () => {
 
     return (
         <>
-            <h1>Login</h1>
+            <h2>Login</h2>
 
             { `${authContext.user.email} ${authContext.prueba}` } 
+
+            <form action="">
+                <label htmlFor="">User</label>
+                <input type="email" />
+
+                <label htmlFor="">Password</label>
+                <input type="password" />
+            </form>
         </>
     )
 

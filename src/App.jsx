@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Albums from './pages/Albums';
 import { AuthProvider } from './contexts/auth';
 import AddUsers from './pages/AddUser';
+import Signup from './pages/Signup';
 // import Users from './containers/Users';
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
             <Route path='/users/:userId/albums' element={<Albums />} />
             <Route path='/' element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
 
           {/* <Link to="/users">Ir a Users</Link>
